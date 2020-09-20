@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 import { getPokemonsData } from '../../service/getPokemonsData';
 
-const CardsContainer = ({ render }) => {
+type CardsContainerProps = {
+  render: any;
+};
+
+const CardsContainer = ({ render }: CardsContainerProps) => {
   const [pokemonsData, setPokemonsData] = useState([]);
 
   useEffect(() => {

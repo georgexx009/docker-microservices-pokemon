@@ -9,11 +9,18 @@ const AppContainer = styled.div`
     'Droid Sans', 'Helvetica Neue', sans-serif;
 `;
 
+type pokemonData = {
+  id: number;
+  name: string;
+};
+
 const App = () => {
   return (
     <AppContainer>
       <CardsContainer
-        render={pokemonsData => <DisplayCards pokemonsData={pokemonsData} />}
+        render={(pokemonsData: pokemonData[]) => (
+          <DisplayCards pokemonsData={pokemonsData} />
+        )}
       />
     </AppContainer>
   );
